@@ -1,0 +1,19 @@
+version: '2'
+services:
+  salt-master:
+    hostname: master
+    build:
+      context: ./master
+    networks:
+      main:
+        aliases:
+          - salt
+  salt-minion:
+    hostname: minion
+    build:
+      context: ./minion
+    networks:
+      main:
+
+networks:
+  main:
